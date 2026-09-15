@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class CelestialBodyManager {
 
-    private List<CelestialBody> celestialBodyList;
+    private final List<CelestialBody> celestialBodyList;
 
     public CelestialBodyManager(List<CelestialBody> celestialBodyList) {
         this.celestialBodyList = new ArrayList<>(celestialBodyList);
