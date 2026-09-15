@@ -24,6 +24,17 @@ class CelestialBodyManagerTest {
 
     @Test
     void registerCelestialBodyMustIncreaseListByOne() {
+
+        int initialListSize = testManager.fetchAll().size();
+
+        int expectedSize = initialListSize + 1;
+
+        testManager.registerCelestialBody(new Star("Default Star Name 02", 342.876, 27.98, 86.754, "Default espectral type", "Default description"));
+
+        int currentListSize = testManager.fetchAll().size();
+
+        assertEquals(expectedSize, currentListSize);
+
     }
 
     @Test
@@ -44,5 +55,7 @@ class CelestialBodyManagerTest {
 
     @Test
     void filterMoonsByOrbitalPlanetShouldReturnExpectedList() {
+        
+
     }
 }
