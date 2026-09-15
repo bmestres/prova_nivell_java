@@ -39,6 +39,14 @@ class CelestialBodyManagerTest {
 
     @Test
     void fetchAllShouldReturnExpectedList() {
+        List<CelestialBody> expectedList = List.of(
+                new Planet("Default Planet With Atmosphere Name", 250.654, 22.564, 3, true),
+                new Star("Default Star Nam", 342.876, 27.98, 86.754, "Default espectral type", "Default description"),
+                new Moon("Default Moon Name", 279.879, 49.753, "Test Orbital Planet", true),
+                new Planet("Default Planet Name", 250.654, 22.564, 3, false)
+        );
+
+        assertThat(expectedList).usingRecursiveComparison().isEqualTo(testManager.fetchAll());
     }
 
     @Test
