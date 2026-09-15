@@ -1,6 +1,6 @@
 package domain;
 
-public interface PotentiallyHabitable {
+public interface Habitable {
     boolean isHabitable();
     String getHabitabilityReport();
 }

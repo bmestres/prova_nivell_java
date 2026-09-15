@@ -1,6 +1,6 @@
 package domain;
 
-public class Moon extends CelestialBody implements PotentiallyHabitable{
+public class Moon extends CelestialBody implements Habitable {
     private String orbitalPlanet;
     private boolean rockySurface;
     private static final String DEFAULT_NAME = "Moon";

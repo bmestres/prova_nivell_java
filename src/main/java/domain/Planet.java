@@ -1,6 +1,6 @@
 package domain;
 
-public class Planet extends CelestialBody implements PotentiallyHabitable {
+public class Planet extends CelestialBody implements Habitable {
     private int numberOfMoons;
     private boolean atmospherePresence;
     private static final String DISPLAY_NAME = "Planet";
