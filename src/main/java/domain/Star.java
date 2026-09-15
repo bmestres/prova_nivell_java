@@ -24,7 +24,7 @@ public class Star extends CelestialBody{
         if(defaultDescription.isBlank()) {
             throw new IllegalArgumentException("Description must not be empty");
         }
-        
+
         this.surfaceTemperature = surfaceTemperature;
         this.espectralType = espectralType;
         this.defaultDescription = defaultDescription;
