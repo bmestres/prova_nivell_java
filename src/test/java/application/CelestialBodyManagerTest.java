@@ -1,9 +1,6 @@
 package application;
 
-import domain.CelestialBody;
-import domain.Moon;
-import domain.Planet;
-import domain.Star;
+import domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -67,8 +64,17 @@ class CelestialBodyManagerTest {
         );
 
         List<Moon> currentList = testManager.filterMoonsByOrbitalPlanet("Test Orbital Planet");
-
         assertThat(expectedList).usingRecursiveComparison().isEqualTo(expectedList);
 
+    }
+
+    @Test
+    void filterHabitablesShouldReturnExpectedList(){
+        List<Habitable> expectedList = List.of(
+                new Planet("Default Planet With Atmosphere Name", 250.654, 22.564, 3, true),
+                new Moon("Default Moon Name", 279.879, 49.753, "Test Orbital Planet", true)
+        );
+
+        assertThat(expectedList).usingRecursiveComparison().isEqualTo(testManager.filterHabitableBodies());
     }
 }

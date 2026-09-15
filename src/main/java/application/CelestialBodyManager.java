@@ -55,6 +55,7 @@ public class CelestialBodyManager {
                 .stream()
                 .filter(celestialBody -> celestialBody instanceof Habitable)
                 .map(celestialBody -> (Habitable)celestialBody)
+                .filter(habitable -> habitable.isHabitable())
                 .collect(Collectors.toList());
     }
 
