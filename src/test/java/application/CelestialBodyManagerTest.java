@@ -55,7 +55,14 @@ class CelestialBodyManagerTest {
 
     @Test
     void filterMoonsByOrbitalPlanetShouldReturnExpectedList() {
-        
+
+        List<Moon> expectedList = List.of(
+                new Moon("Default Moon Name", 279.879, 49.753, "Test Orbital Planet", true)
+        );
+
+        List<Moon> currentList = testManager.filterMoonsByOrbitalPlanet("Test Orbital Planet");
+
+        assertThat(expectedList).usingRecursiveComparison().isEqualTo(expectedList);
 
     }
 }
