@@ -57,8 +57,6 @@ class CelestialBodyManagerTest {
         );
 
         assertThat(expectedList).usingRecursiveComparison().isEqualTo(testManager.filterPlanetsWithAtmosphere());
-
-
     }
 
     @Test

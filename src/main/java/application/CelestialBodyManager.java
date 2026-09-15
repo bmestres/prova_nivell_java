@@ -1,6 +1,7 @@
 package application;
 
 import domain.CelestialBody;
+import domain.Habitable;
 import domain.Moon;
 import domain.Planet;
 
@@ -46,6 +47,15 @@ public class CelestialBodyManager {
                 .filter(moon -> moon.getOrbitalPlanet().equalsIgnoreCase(orbitalPlanet))
                 .collect(Collectors.toList());
 
+    }
+
+    public List<Habitable> filterHabitableBodies(){
+        return this
+                .fetchAll()
+                .stream()
+                .filter(celestialBody -> celestialBody instanceof Habitable)
+                .map(celestialBody -> (Habitable)celestialBody)
+                .collect(Collectors.toList());
     }
 
 
