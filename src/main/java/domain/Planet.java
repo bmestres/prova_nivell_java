@@ -48,11 +48,14 @@ public class Planet extends CelestialBody implements PotentiallyHabitable {
 
     @Override
     public boolean isHabitable() {
-        return false;
+        return atmospherePresence;
     }
 
     @Override
     public String getHabitabilityReport() {
-        return "";
+        if(isHabitable()){
+            return String.format("%s, %s, therefore it is habitable", super.getName(), this.atmospherePresenceDefaultString());
+        }
+        return String.format("%s, %s, therefore it is not habitable", super.getName(), this.atmospherePresenceDefaultString());
     }
 }
